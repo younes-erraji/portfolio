@@ -23,10 +23,10 @@ class Navbar extends Component {
             </label>
           </div>
           <div className="nav-links">
-            <NavLink activeClassName="selected" to="/">
+            <NavLink exact activeClassName="selected" to="/">
               Home
             </NavLink>
-            <NavLink activeClassName="selected" to="/about">
+            <NavLink exact activeClassName="selected" to="/about">
               About
             </NavLink>
             <NavLink activeClassName="selected" to="/skills">
