@@ -27,6 +27,7 @@ function landing() {
         <a
           className="button secondary resume"
           href={Resume}
+          download="resume"
           target="_blank"
           rel="noreferrer"
         >

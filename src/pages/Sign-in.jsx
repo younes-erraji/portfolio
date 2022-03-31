@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import ConnectWith from "../assets/components/sign-in-up-with";
 
 import "../assets/styles/authentication.css";
@@ -44,9 +46,9 @@ class Sign_In extends Component {
             </div>
             <span className="switch-authentication">
               not a member yet? &nbsp;
-              <a className="link" href="./register.html">
+              <Link className="link" to="/sign-up">
                 sign up
-              </a>
+              </Link>
             </span>
             <input
               className="login button primary"

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import Socials from "../components/Socials";
 
 import map from "../icons/map.svg";
@@ -46,22 +48,28 @@ class Footer extends Component {
               <h4>links</h4>
               <ul className="list-unstyled">
                 <li>
-                  <a href="./index.html">- Home</a>
+                  <Link to="/">- Home</Link>
                 </li>
                 <li>
-                  <a href="#about">- About</a>
+                  <Link to="/about">- About</Link>
                 </li>
                 <li>
-                  <a href="#skills">- Skills</a>
+                  <Link to="/skills">- Skills</Link>
                 </li>
                 <li>
-                  <a href="#work">- Work</a>
+                  <Link to="/projects">- projects</Link>
                 </li>
                 <li>
-                  <a href="#careers">- Careers</a>
+                  <Link to="/careers">- Careers</Link>
                 </li>
                 <li>
-                  <a href="#contact">- Contact</a>
+                  <Link to="/contact">- Contact</Link>
+                </li>
+                <li>
+                  <Link to="/sign-in">- Sign in</Link>
+                </li>
+                <li>
+                  <Link to="/sign-up">- Sign up</Link>
                 </li>
               </ul>
             </div>

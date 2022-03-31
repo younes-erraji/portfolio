@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import arrowDown from "../icons/arrow-down.svg";
 
@@ -38,10 +39,10 @@ class projects extends Component {
           <p>## 👨‍💻 If you do it right, it will last forever.</p>
           <div className="projects-content">{this.state.projects}</div>
           <section className="show-more">
-            <a className="button primary show-more" href="./projects.html">
+            <Link className="button primary show-more" to="/projects">
               show more
               <img src={arrowDown} alt="" />
-            </a>
+            </Link>
           </section>
         </div>
       </div>
@@ -59,7 +60,7 @@ class projects extends Component {
             <a className="project-source" href={element.Project["source code"]}>
               <i className="fa fa-link fa-3x m-inline:1"></i>
             </a>
-            <a className="project-image">
+            <a href="#" className="project-image">
               <i className="fa fa-link fa-3x m-inline:1"></i>
             </a>
           </div>

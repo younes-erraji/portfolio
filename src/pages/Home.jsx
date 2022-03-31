@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import "../assets/styles/style.css";
 import Landing from "../assets/sections/landing";
@@ -22,16 +23,16 @@ class Home extends Component {
       var now = new Date().getTime(),
         distance = countDownDate - now,
         D = Math.floor(distance / (1000 * 60 * 60 * 24)),
-        H = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        ),
+        H = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
         M = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
         S = Math.floor((distance % (1000 * 60)) / 1000);
 
       this.setState({
-        countDown: `${D < 10 ? `0${D}` : D} / ${H < 10 ? `0${H}` : H}:${M < 10 ? `0${M}` : M}:${S < 10 ? `0${S}` : S}`,
+        countDown: `${D < 10 ? `0${D}` : D} / ${H < 10 ? `0${H}` : H}:${
+          M < 10 ? `0${M}` : M
+        }:${S < 10 ? `0${S}` : S}`,
       });
-      
+
       if (distance < 0) {
         this.setState({
           countDown: `Done`,
@@ -64,9 +65,9 @@ class Home extends Component {
               amet ipsum provident fuga modi quos cumque voluptate quia? Ea,
               aliquid accusamus quam perferendis neque nemo voluptatem corrupti!
             </p>
-            <a className="button primary" href="./contact.html">
+            <Link className="button primary" to="/contact">
               Contact us
-            </a>
+            </Link>
           </div>
         </div>
       </>
