@@ -10,6 +10,8 @@ import Projects from "../assets/sections/projects";
 import Careers from "../assets/sections/careers";
 import Resources from "../assets/sections/resources";
 
+import arrowDown from "../assets/icons/arrow-down.svg";
+
 class Home extends Component {
   constructor() {
     super();
@@ -49,7 +51,12 @@ class Home extends Component {
         <About />
         <Skills />
         <Services />
-        <Projects />
+        <Projects length={3}>
+          <Link className="button primary show-more" to="/projects">
+            show more
+            <img src={arrowDown} alt="" />
+          </Link>
+        </Projects>
         <Careers />
         <Resources />
         <div className="timer">

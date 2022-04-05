@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-
-import arrowDown from "../icons/arrow-down.svg";
 
 class projects extends Component {
   constructor() {
@@ -18,6 +15,9 @@ class projects extends Component {
         return response.json();
       })
       .then((response) => {
+        const { length } = this.props;
+        if (length) response.length = length;
+
         projects = response.map((project, index) => {
           return this.projectCard(project, index);
         });
@@ -38,12 +38,7 @@ class projects extends Component {
           <h2 className="special-heading">projects</h2>
           <p>## 👨‍💻 If you do it right, it will last forever.</p>
           <div className="projects-content">{this.state.projects}</div>
-          <section className="show-more">
-            <Link className="button primary show-more" to="/projects">
-              show more
-              <img src={arrowDown} alt="" />
-            </Link>
-          </section>
+          <section className="show-more">{this.props.children}</section>
         </div>
       </div>
     );

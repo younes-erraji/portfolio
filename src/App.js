@@ -13,6 +13,10 @@ import Contact from "./pages/Contact";
 import Sign_in from "./pages/Sign-in";
 import Sign_up from "./pages/Sign-up";
 
+import NotFound from "./pages/404";
+
+import Up from "./assets/components/Up";
+
 import Footer from "./assets/Layouts/Footer";
 
 class App extends Component {
@@ -31,7 +35,10 @@ class App extends Component {
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/sign-in" element={<Sign_in />}></Route>
             <Route path="/sign-up" element={<Sign_up />}></Route>
+
+            <Route path="*" element={<NotFound />}></Route>
           </Routes>
+          <Up />
           <Footer />
         </>
       </Router>

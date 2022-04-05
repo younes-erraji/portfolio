@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-import "../assets/styles/about.css";
+import "../assets/styles/404.css";
 
 import Section from "../assets/sections/about";
 
-class About extends Component {
+class NotFound extends Component {
   render() {
     return <Section />;
   }
 }
 
-export default About;
+export default NotFound;

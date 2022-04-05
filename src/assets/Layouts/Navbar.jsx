@@ -23,36 +23,16 @@ class Navbar extends Component {
             </label>
           </div>
           <div className="nav-links">
-            <NavLink exact activeClassName="selected" to="/">
-              Home
-            </NavLink>
-            <NavLink exact activeClassName="selected" to="/about">
-              About
-            </NavLink>
-            <NavLink activeClassName="selected" to="/skills">
-              Skills
-            </NavLink>
-            <NavLink activeClassName="selected" to="/projects">
-              Projects
-            </NavLink>
-            <NavLink activeClassName="selected" to="/careers">
-              Careers
-            </NavLink>
-            <NavLink activeClassName="selected" to="/contact">
-              Contact
-            </NavLink>
-            <NavLink
-              activeClassName="selected"
-              className="account m-inline:1"
-              to="/sign-in"
-            >
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/about">About</NavLink>
+            <NavLink to="/skills">Skills</NavLink>
+            <NavLink to="/projects">Projects</NavLink>
+            <NavLink to="/careers">Careers</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
+            <NavLink className="account m-inline:1" to="/sign-in">
               Sign In
             </NavLink>
-            <NavLink
-              activeClassName="selected"
-              className="account"
-              to="/sign-up"
-            >
+            <NavLink className="account" to="/sign-up">
               Sign Up
             </NavLink>
           </div>

@@ -39,7 +39,7 @@ class Resources extends Component {
             <ul className="list-unstyled">{this.state.resources}</ul>
           </div>
           <section>
-            <span className="slider selected" data-index="0"></span>
+            <span className="slider active" data-index="0"></span>
             <span className="slider" data-index="1"></span>
             <span className="slider" data-index="2"></span>
             <span className="slider" data-index="3"></span>
