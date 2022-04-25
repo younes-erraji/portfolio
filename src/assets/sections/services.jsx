@@ -1,5 +1,3 @@
-import React from "react";
-
 import GraphicDesign from "../icons/services/graphic-design.svg";
 import UI_UX from "../icons/services/ui-ux.svg";
 import WebDesign from "../icons/services/web-design.svg";
@@ -7,7 +5,7 @@ import WebDevelopment from "../icons/services/programming.svg";
 
 import Services from "../images/services.jpg";
 
-function services() {
+const services = () => {
   return (
     <div className="services" id="services">
       <div className="container">
@@ -69,6 +67,6 @@ function services() {
       </div>
     </div>
   );
-}
+};
 
 export default services;

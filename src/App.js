@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import Gradbar from "./assets/Layouts/Gradbar";
 import Header from "./assets/Layouts/Header";
 import Navbar from "./assets/Layouts/Navbar";
 
@@ -10,8 +11,8 @@ import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
-import Sign_in from "./pages/Sign-in";
-import Sign_up from "./pages/Sign-up";
+import SignIn from "./pages/Sign-in";
+import SignUp from "./pages/Sign-up";
 
 import NotFound from "./pages/404";
 
@@ -24,6 +25,7 @@ class App extends Component {
     return (
       <Router>
         <>
+          <Gradbar />
           <Header />
           <Navbar />
           <Routes>
@@ -33,8 +35,8 @@ class App extends Component {
             <Route path="/projects" element={<Projects />}></Route>
             <Route path="/careers" element={<Careers />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
-            <Route path="/sign-in" element={<Sign_in />}></Route>
-            <Route path="/sign-up" element={<Sign_up />}></Route>
+            <Route path="/sign-in" element={<SignIn />}></Route>
+            <Route path="/sign-up" element={<SignUp />}></Route>
 
             <Route path="*" element={<NotFound />}></Route>
           </Routes>

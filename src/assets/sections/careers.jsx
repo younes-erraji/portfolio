@@ -1,6 +1,4 @@
-import React from "react";
-
-function careers() {
+const careers = () => {
   return (
     <div className="careers" id="careers">
       <h2 className="special-heading">Careers</h2>
@@ -82,6 +80,6 @@ function careers() {
       </div>
     </div>
   );
-}
+};
 
 export default careers;

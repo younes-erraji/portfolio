@@ -1,19 +1,23 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 
 import arrowUp from "../icons/arrow-up.svg";
 
 class Up extends Component {
+  constructor() {
+    super();
+    this.upButton = createRef();
+  }
+
   componentDidMount() {
-    const upButton = document.querySelector("button.up");
     if (window.scrollY > 1000) {
-      upButton.style.display = "flex";
+      this.upButton.current.style.display = "flex";
     }
 
     window.onscroll = () => {
-      if (window.scrollY > 1000) {
-        upButton.style.display = "flex";
+      if (window.scrollY > 1200) {
+        this.upButton.current.style.display = "flex";
       } else {
-        upButton.style.display = "none";
+        this.upButton.current.style.display = "none";
       }
     };
   }
@@ -24,6 +28,7 @@ class Up extends Component {
         className="button primary up"
         style={{ display: "none" }}
         onClick={this.scrollUp}
+        ref={this.upButton}
       >
         <img src={arrowUp} alt="" />
       </button>
@@ -31,7 +36,6 @@ class Up extends Component {
   }
 
   scrollUp = () => {
-    console.log("scroll");
     window.scrollTo({
       top: 0,
       behavior: "smooth",

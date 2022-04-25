@@ -1,9 +1,8 @@
-import React from "react";
 import Facebook from "../icons/social media/facebook.svg";
 import Github from "../icons/social media/github.png";
 import Google from "../icons/social media/google.svg";
 
-function ConnectWith() {
+const ConnectWith = () => {
   return (
     <div className="sign-in-up-with-container">
       <div className="sign-in-up-with facebook">
@@ -17,6 +16,6 @@ function ConnectWith() {
       </div>
     </div>
   );
-}
+};
 
 export default ConnectWith;

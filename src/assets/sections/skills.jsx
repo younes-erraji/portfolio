@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import Skill from "../components/Card/Skill";
+
 class skills extends Component {
   constructor(props) {
     super();
@@ -17,11 +19,11 @@ class skills extends Component {
       })
       .then((response) => {
         skills = response.map((skill, index) => {
-          return this.SkillCard(skill, index);
+          return <Skill skill={skill} key={index} />;
         });
 
         this.setState({
-          skills: skills,
+          skills,
         });
       })
       .catch((reject) => {
@@ -40,28 +42,6 @@ class skills extends Component {
       </section>
     );
   }
-
-  SkillCard = (element, index) => {
-    return (
-      <div className="skills-data" key={index}>
-        <div className="skills-names">
-          <img
-            className="skill-icon"
-            src={`./assets/icons/skills/${element.skill.icon}`}
-            alt=""
-          />
-          <span className="skill-name">{element.skill.name}</span>
-        </div>
-        <div
-          className="skill-bar"
-          style={{ width: element.skill.percentage }}
-        ></div>
-        <div>
-          <span className="skills-percentage">{element.skill.percentage}</span>
-        </div>
-      </div>
-    );
-  };
 }
 
 export default skills;

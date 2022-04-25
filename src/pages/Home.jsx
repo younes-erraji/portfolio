@@ -19,8 +19,9 @@ class Home extends Component {
       countDown: "",
     };
   }
+  
   componentDidMount() {
-    let countDownDate = new Date("Jan 24, 2024 15:37:25").getTime();
+    let countDownDate = new Date("Aug 16, 2022 00:00:00").getTime();
     let x = setInterval(() => {
       var now = new Date().getTime(),
         distance = countDownDate - now,

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import Resource from "../components/Card/Resource";
+
 class Resources extends Component {
   constructor(props) {
     super();
@@ -17,11 +19,11 @@ class Resources extends Component {
       })
       .then((response) => {
         resources = response.map((resource, index) => {
-          return this.resourceCard(resource, index);
+          return <Resource resource={resource} key={index} />;
         });
 
         this.setState({
-          resources: resources,
+          resources,
         });
       })
       .catch((reject) => {
@@ -48,16 +50,6 @@ class Resources extends Component {
       </div>
     );
   }
-
-  resourceCard = (element, index) => {
-    return (
-      <li key={index}>
-        <a href="#">
-          <img src={`./assets/images/resources/${element.resource.name}.svg`} />
-        </a>
-      </li>
-    );
-  };
 }
 
 export default Resources;

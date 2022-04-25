@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import Project from "../components/Card/Project";
+
 class projects extends Component {
   constructor() {
     super();
@@ -19,11 +21,11 @@ class projects extends Component {
         if (length) response.length = length;
 
         projects = response.map((project, index) => {
-          return this.projectCard(project, index);
+          return <Project project={project} key={index} />;
         });
 
         this.setState({
-          projects: projects,
+          projects,
         });
       })
       .catch((reject) => {
@@ -43,41 +45,6 @@ class projects extends Component {
       </div>
     );
   }
-
-  projectCard = (element, index) => {
-    return (
-      <div className="card" key={index}>
-        <div className="card-image">
-          <div className="image-placeholder">
-            <a className="project-link" href={element.Project.link}>
-              <i className="fa fa-plus fa-3x m-inline:1"></i>
-            </a>
-            <a className="project-source" href={element.Project["source code"]}>
-              <i className="fa fa-link fa-3x m-inline:1"></i>
-            </a>
-            <a href="#" className="project-image">
-              <i className="fa fa-link fa-3x m-inline:1"></i>
-            </a>
-          </div>
-          <img
-            src={`./assets/images/projects/${element.Project.image}`}
-            alt={element.Project.alt}
-          />
-        </div>
-        <div className="card-info">
-          <h3>
-            <a href="#" target="_blank">
-              {element.Project.name}
-            </a>
-          </h3>
-          <p>{element.Project.desc}</p>
-          <button className="button secondary display-project">
-            show more
-          </button>
-        </div>
-      </div>
-    );
-  };
 }
 
 export default projects;
