@@ -1,0 +1,3 @@
+https://www.fullstackfish.com/posts/2021-09-04-sql-server-to-react-with-prisma/
+
+https://dev.to/abulhasanlakhani/connecting-to-sql-server-from-electron-react-1kdi

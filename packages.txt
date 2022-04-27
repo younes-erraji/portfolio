@@ -5,3 +5,77 @@ npm i styled-components
 
 npm i gh-pages --save
 npm run deploy
+
+// For connecting to SQL Server
+npm install tedious
+
+// Pr prisma
+npm i -D prisma
+npm i @prisma/client
+npx prisma init
+
+// schema.prisma
+generator client {
+  provider        = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+DATABASE_URL="sqlserver://[SERVERNAME].database.windows.net:1433;database=[DATABASENAME];user=[USERNAME];password=[PASSWORD];encrypt=true"
+
+npx prisma db pull
+
+npx prisma generate
+
+// lib/prisma.js
+import { PrismaClient } from "@prisma/client";
+
+let prisma;
+
+if (process.env.NODE_ENV === "production") {
+  prisma = new PrismaClient();
+} else {
+  if (!global.prisma) {
+    global.prisma = new PrismaClient();
+  }
+  prisma = global.prisma;
+}
+
+export default prisma;
+
+// pages/api/products.js
+import prisma from "../../lib/prisma";
+
+export default async function handle(req, res) {
+  const products = await prisma.product.findMany();
+  res.json(products);
+}
+
+
+// pages/index.js
+export const getServerSideProps = async () => {
+  const res = await fetch("http://localhost:3000/api/products");
+  const products = await res.json();
+  return {
+    props: { products },
+  };
+};
+
+export default function Product({ products }) {
+  return (
+    <div>
+      {products.map((p) => {
+        return (
+          <div key={p.ProductID}>
+            <p>
+              {p.Name} — ${p.ListPrice}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  );
+}

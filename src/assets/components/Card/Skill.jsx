@@ -1,3 +1,9 @@
+import styled from "styled-components";
+
+const SkillBar = styled.div`
+  width: ${(props) => props.width};
+`;
+
 const Skill = ({ skill }) => {
   return (
     <div className="skills-data">
@@ -9,10 +15,7 @@ const Skill = ({ skill }) => {
         />
         <span className="skill-name">{skill.skill.name}</span>
       </div>
-      <div
-        className="skill-bar"
-        style={{ width: skill.skill.percentage }}
-      ></div>
+      <SkillBar className="skill-bar" width={skill.skill.percentage}></SkillBar>
       <div>
         <span className="skills-percentage">{skill.skill.percentage}</span>
       </div>
