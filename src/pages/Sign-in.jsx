@@ -1,15 +1,52 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
+import Styled from "styled-components";
 
 import ConnectWith from "../assets/components/sign-in-up-with";
 
 import "../assets/styles/authentication.css";
 
+const Feedback = Styled.small`
+  display: block;
+  font-size: 14px;
+  color: var(--red);
+`;
+
 const Sign_In = () => {
+  const usernameRef = useRef();
+  const usernameMessageRef = useRef();
+  const passwordRef = useRef();
+  const passwordMessageRef = useRef();
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+
+    if (usernameRef.current.value === "") {
+      usernameMessageRef.current.textContent = "The Username Field is Required";
+    } else {
+      usernameMessageRef.current.textContent = "";
+    }
+
+    if (passwordRef.current.value === "") {
+      passwordMessageRef.current.textContent = "The Password Field is Required";
+    } else if (passwordRef.current.value.length < 7) {
+      passwordMessageRef.current.textContent =
+        "The Password Field Should Contains at Least 7 Chars";
+    } else {
+      passwordMessageRef.current.textContent = "";
+    }
+  };
+
   return (
     <div className="auth">
       <h2 className="special-heading">Sign In</h2>
       <p>## 🙋 Log in to Your account</p>
-      <form className="form-auth" id="form-login" method="post">
+      <form
+        className="form-auth"
+        id="form-login"
+        method="POST"
+        onSubmit={handleSignIn}
+      >
         <div className="username">
           <label className="form-label" htmlFor="username">
             Username or E-mail <small className="required">*</small>
@@ -19,9 +56,10 @@ const Sign_In = () => {
             id="username"
             type="text"
             name="username"
-            required
+            ref={usernameRef}
             autoFocus
           />
+          <Feedback ref={usernameMessageRef}></Feedback>
         </div>
         <div className="password">
           <label className="form-label" htmlFor="password">
@@ -32,8 +70,9 @@ const Sign_In = () => {
             id="password"
             type="password"
             name="password"
-            required
+            ref={passwordRef}
           />
+          <Feedback ref={passwordMessageRef}></Feedback>
         </div>
         <div className="checkbox">
           <input type="checkbox" id="checkbox" name="checkbox" />
@@ -47,7 +86,7 @@ const Sign_In = () => {
             sign up
           </Link>
         </span>
-        <input className="login button primary" type="submit" value="Login" />
+        <input type="submit" className="login button primary" value="Login" />
         <section className="noe">
           <span>or Sign in with</span>
         </section>

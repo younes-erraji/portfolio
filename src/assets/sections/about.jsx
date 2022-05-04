@@ -2,8 +2,6 @@ import Socials from "../components/Socials";
 
 import Avatar from "../images/avatar.png";
 
-import Resume from "../resume.pdf";
-
 const about = () => {
   return (
     <section className="about" id="about">
@@ -20,7 +18,7 @@ const about = () => {
           </p>
           <a
             className="button secondary resume"
-            href={Resume}
+            href='#'
             download="resume"
             target="_blank"
             rel="noreferrer"

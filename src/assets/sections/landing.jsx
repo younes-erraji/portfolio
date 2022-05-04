@@ -3,8 +3,6 @@ import React, { Component } from "react";
 import Logo from "../images/logo.png";
 import Wave from "../images/wave.gif";
 
-import Resume from "../resume.pdf";
-
 class Landing extends Component {
   componentDidMount() {
     const landingPage = document.querySelector(".landing"),
@@ -44,7 +42,7 @@ class Landing extends Component {
           </p>
           <a
             className="button secondary resume"
-            href={Resume}
+            href="#"
             download="resume"
             target="_blank"
             rel="noreferrer"

@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import Styled from "styled-components";
+
 import "../assets/styles/contact.css";
 
 import Resources from "../assets/sections/resources";
@@ -6,7 +9,50 @@ import map from "../assets/icons/map.svg";
 import phone from "../assets/icons/phone.svg";
 import chat from "../assets/icons/chat.svg";
 
+const Feedback = Styled.small`
+  display: block;
+  font-size: 14px;
+  color: var(--red);
+`;
+
 const Contact = () => {
+  const nameRef = useRef();
+  const nameFeedbackRef = useRef();
+  const emailRef = useRef();
+  const emailFeedbackRef = useRef();
+  const phoneRef = useRef();
+  const phoneFeedbackRef = useRef();
+  const messageRef = useRef();
+  const messageFeedbackRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (nameRef.current.value === "") {
+      nameFeedbackRef.current.textContent = "The Name Field is Required";
+    } else {
+      nameFeedbackRef.current.textContent = "";
+    }
+
+    if (emailRef.current.value === "") {
+      emailFeedbackRef.current.textContent = "The E-mail Field is Required";
+    } else {
+      emailFeedbackRef.current.textContent = "";
+    }
+
+    if (phoneRef.current.value === "") {
+      phoneFeedbackRef.current.textContent = "The Phone Field is Required";
+    } else {
+      phoneFeedbackRef.current.textContent = "";
+    }
+
+    if (messageRef.current.value === "") {
+      messageFeedbackRef.current.textContent = "The Message Field is Required";
+    } else {
+      messageFeedbackRef.current.textContent = "";
+    }
+  };
+
   return (
     <>
       <iframe
@@ -32,7 +78,7 @@ const Contact = () => {
             </p>
             <p>
               <img src={map} alt="" />
-              Morocco
+              Témara, Morocco
             </p>
             <p>
               <img src={chat} alt="" />
@@ -47,7 +93,7 @@ const Contact = () => {
               (+212) 6 51.65.67.99
             </p>
           </div>
-          <form>
+          <form method="POST" onSubmit={handleSubmit}>
             <p>
               Send an e-mail. <br /> All fields marked with an asterisk * are
               required
@@ -55,19 +101,43 @@ const Contact = () => {
             <label className="form-label" htmlFor="name">
               Name <small className="required">*</small>
             </label>
-            <input className="form-field" type="text" id="name" autoFocus />
+            <input
+              className="form-field"
+              type="text"
+              id="name"
+              ref={nameRef}
+              autoFocus
+            />
+            <Feedback ref={nameFeedbackRef}></Feedback>
             <label className="form-label" htmlFor="email">
               E-mail address <small className="required">*</small>
             </label>
-            <input className="form-field" type="email" id="email" />
+            <input
+              className="form-field"
+              type="email"
+              id="email"
+              ref={emailRef}
+            />
+            <Feedback ref={emailFeedbackRef}></Feedback>
             <label className="form-label" htmlFor="phone">
               Phone number <small className="required">*</small>
             </label>
-            <input className="form-field" type="text" id="phone" />
+            <input
+              className="form-field"
+              type="text"
+              id="phone"
+              ref={phoneRef}
+            />
+            <Feedback ref={phoneFeedbackRef}></Feedback>
             <label className="form-label" htmlFor="message">
               Message <small className="required">*</small>
             </label>
-            <textarea className="form-field" id="message"></textarea>
+            <textarea
+              className="form-field"
+              id="message"
+              ref={messageRef}
+            ></textarea>
+            <Feedback ref={messageFeedbackRef}></Feedback>
             <div className="checkbox">
               <input type="checkbox" id="checkbox" />
               <label className="form-label" htmlFor="checkbox">

@@ -76,6 +76,31 @@ const careers = () => {
             </div>
           </div>
           <div className="clearfix"></div>
+          <div className="right">
+            <div className="content">
+              <h4>Fondation Tamkine</h4>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Deleniti ex molestiae illo nisi quaerat veniam beatae aliquid
+                eligendi. Aliquid tenetur quas ex, sequi porro nam commodi
+                placeat maxime nobis quam?
+              </p>
+            </div>
+          </div>
+          <div className="clearfix"></div>
+          <div className="year">2022</div>
+          <div className="left">
+            <div className="content">
+              <h4>Concepment S.a.r.l</h4>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Deleniti ex molestiae illo nisi quaerat veniam beatae aliquid
+                eligendi. Aliquid tenetur quas ex, sequi porro nam commodi
+                placeat maxime nobis quam?
+              </p>
+            </div>
+          </div>
+          <div className="clearfix"></div>
         </div>
       </div>
     </div>

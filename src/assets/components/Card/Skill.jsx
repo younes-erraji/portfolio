@@ -4,20 +4,24 @@ const SkillBar = styled.div`
   width: ${(props) => props.width};
 `;
 
-const Skill = ({ skill }) => {
+const Skill = ({
+  skill: {
+    skill: { icon, name, percentage },
+  },
+}) => {
   return (
     <div className="skills-data">
       <div className="skills-names">
         <img
           className="skill-icon"
-          src={`./assets/icons/skills/${skill.skill.icon}`}
+          src={`./assets/icons/skills/${icon}`}
           alt=""
         />
-        <span className="skill-name">{skill.skill.name}</span>
+        <span className="skill-name">{name}</span>
       </div>
-      <SkillBar className="skill-bar" width={skill.skill.percentage}></SkillBar>
+      <SkillBar className="skill-bar" width={percentage}></SkillBar>
       <div>
-        <span className="skills-percentage">{skill.skill.percentage}</span>
+        <span className="skills-percentage">{percentage}</span>
       </div>
     </div>
   );

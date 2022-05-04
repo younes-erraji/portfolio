@@ -1,11 +1,12 @@
-const Resource = ({ resource }) => {
+const Resource = ({
+  resource: {
+    resource: { link, name },
+  },
+}) => {
   return (
     <li>
-      <a href={resource.resource.link} target="_blank" rel="noreferrer">
-        <img
-          src={`./assets/images/resources/${resource.resource.name}.svg`}
-          alt=""
-        />
+      <a href={link} target="_blank" rel="noreferrer">
+        <img src={`./assets/images/resources/${name}.svg`} alt="" />
       </a>
     </li>
   );

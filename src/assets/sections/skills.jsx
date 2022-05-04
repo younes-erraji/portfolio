@@ -3,11 +3,10 @@ import React, { Component } from "react";
 import Skill from "../components/Card/Skill";
 
 class skills extends Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
       skills: [],
-      count: props.count,
     };
   }
 
@@ -18,6 +17,8 @@ class skills extends Component {
         return response.json();
       })
       .then((response) => {
+        const { count } = this.props;
+        response.length = count ? count : response.length;
         skills = response.map((skill, index) => {
           return <Skill skill={skill} key={index} />;
         });

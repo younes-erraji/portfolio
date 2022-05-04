@@ -19,7 +19,7 @@ class Home extends Component {
       countDown: "",
     };
   }
-  
+
   componentDidMount() {
     let countDownDate = new Date("Aug 16, 2022 00:00:00").getTime();
     let x = setInterval(() => {
@@ -50,7 +50,7 @@ class Home extends Component {
       <>
         <Landing />
         <About />
-        <Skills />
+        <Skills count={16} />
         <Services />
         <Projects length={3}>
           <Link className="button primary show-more" to="/projects">
