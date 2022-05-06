@@ -19,7 +19,6 @@ const Sign_Up = () => {
             id="name"
             type="text"
             name="name"
-            required
             autoFocus
           />
         </div>
@@ -27,13 +26,7 @@ const Sign_Up = () => {
           <label className="form-label" htmlFor="email">
             E-mail <small className="required">*</small>
           </label>
-          <input
-            className="form-field"
-            id="email"
-            type="email"
-            name="email"
-            required
-          />
+          <input className="form-field" id="email" type="email" name="email" />
         </div>
         <div className="username">
           <label className="form-label" htmlFor="username">
@@ -44,7 +37,6 @@ const Sign_Up = () => {
             id="username"
             type="text"
             name="username"
-            required
           />
         </div>
         <div className="password">
@@ -56,7 +48,6 @@ const Sign_Up = () => {
             id="password"
             type="password"
             name="password"
-            required
           />
         </div>
         <div className="confirm">
@@ -68,7 +59,6 @@ const Sign_Up = () => {
             id="confirm-password"
             type="password"
             name="confirm-password"
-            required
           />
         </div>
         <div className="checkbox">

@@ -14,8 +14,8 @@ const Header = () => {
             <li>
               <img src={phone} alt="phone" />
               <div className="content">
-                <strong>+212 651 656 799</strong>
-                <strong>06 51 65 67 99</strong>
+                <strong>+212 6## ### ###</strong>
+                <strong>06 ## ## ## ##</strong>
               </div>
             </li>
             <li>

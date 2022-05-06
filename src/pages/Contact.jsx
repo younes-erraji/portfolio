@@ -86,11 +86,11 @@ const Contact = () => {
             </p>
             <p>
               <img src={phone} alt="" />
-              06 51.65.67.99
+              06 ##.##.##.##
             </p>
             <p>
               <img src={phone} alt="" />
-              (+212) 6 51.65.67.99
+              (+212) 6 ##.##.##.##
             </p>
           </div>
           <form method="POST" onSubmit={handleSubmit}>

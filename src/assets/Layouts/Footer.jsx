@@ -28,11 +28,11 @@ const Footer = () => {
               </li>
               <li>
                 <img src={phone} alt="" />
-                06 51.65.67.99
+                06 ##.##.##.##
               </li>
               <li>
                 <img src={phone} alt="" />
-                (+212) 6 51.65.67.99
+                (+212) 6 ##.##.##.##
               </li>
               <li>
                 <a href="https://younes-erraji.github.io">
