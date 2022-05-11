@@ -15,6 +15,7 @@ import SignIn from "./pages/Sign-in";
 import SignUp from "./pages/Sign-up";
 
 import NotFound from "./pages/404";
+import ThreeDimensions from "./pages/3D";
 
 import Up from "./assets/components/Up";
 
@@ -38,7 +39,9 @@ class App extends Component {
             <Route path="/sign-in" element={<SignIn />}></Route>
             <Route path="/sign-up" element={<SignUp />}></Route>
 
+            <Route path="/3D" element={<ThreeDimensions />}></Route>
             <Route path="/404" element={<NotFound />}></Route>
+
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <Up />
