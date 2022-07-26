@@ -27,12 +27,14 @@ const Navbar = () => {
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/careers">Careers</NavLink>
           <NavLink to="/contact">Contact</NavLink>
+          {/*
           <NavLink className="account m-inline:1" to="/sign-in">
             Sign In
           </NavLink>
           <NavLink className="account" to="/sign-up">
             Sign Up
           </NavLink>
+          */}
         </div>
       </div>
     </nav>
