@@ -36,11 +36,10 @@ class App extends Component {
             <Route path="/projects" element={<Projects />}></Route>
             <Route path="/careers" element={<Careers />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
-            
-            {/*
-              <Route path="/sign-in" element={<SignIn />}></Route>
-              <Route path="/sign-up" element={<SignUp />}></Route>
-            */}
+
+            <Route path="/sign-in" element={<SignIn />}></Route>
+            <Route path="/sign-up" element={<SignUp />}></Route>
+
             <Route path="/3D" element={<ThreeDimensions />}></Route>
             <Route path="/404" element={<NotFound />}></Route>
 
