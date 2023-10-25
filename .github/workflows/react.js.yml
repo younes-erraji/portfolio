@@ -31,11 +31,6 @@ jobs:
         echo "Build Started..."
         CI=false npm run build --if-present
         echo "Build Completed Successfully..."
-    - name: Install React Dependencies & Build
-      run: |
-        echo "Deploy to Github Pages..."
-        CI=false npm run deploy
-        echo "Completed..."
 
     - name: GitHub Pages
       uses: actions/configure-pages@v3.0.6
