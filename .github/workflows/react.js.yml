@@ -1,4 +1,4 @@
-name: React
+name: React Portfolio
 
 on:
   push:
@@ -8,7 +8,8 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     strategy:
       matrix:
@@ -22,5 +23,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install
-    - run: npm run build
-    - run: echo "Build Completed Successfully..."
+    - run: echo "Dependencies Installation Completed Successfully..."
+    - run: |
+        npm run build
+        echo "Build Completed Successfully..."
+
