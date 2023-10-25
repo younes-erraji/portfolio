@@ -35,12 +35,12 @@ jobs:
         CI=false npm run build --if-present
         echo "Build Completed Successfully..."
 
-    # - name: GitHub Pages
-    #   uses: actions/configure-pages@v3.0.6
-    #   with:
-    #     build: build
-    #     token: ${{ github.token }}
-    #     author: Younes ERRAJI <younes.erraji8@gmail.com>
+    - name: GitHub Pages
+      uses: actions/configure-pages@v3.0.6
+      with:
+        build: build
+        token: ${{ github.token }}
+        author: Younes ERRAJI <younes.erraji8@gmail.com>
 
     # - name: Deploy GitHub Pages site
     #   uses: actions/deploy-pages@v1.2.9
