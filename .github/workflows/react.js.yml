@@ -31,5 +31,4 @@ jobs:
       run: |
         echo "Running..."
         CI=false npm install
-        CI=false npm run build --if-present
         echo "Completed..."
