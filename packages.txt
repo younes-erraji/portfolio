@@ -1,4 +1,4 @@
 npm i react-router-dom axios styled-components
 
-npm i gh-pages --save
+npm i gh-pages --save-dev
 npm run deploy
