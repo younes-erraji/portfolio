@@ -14,7 +14,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.16.0, 18.x]
+        # node-version: [14.x, 16.16.0, 18.x]
+        node-version: [16.16.0]
 
     steps:
     - uses: actions/checkout@v3
@@ -24,6 +25,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: CI=false npm install
+    # - run: CI=false npm ci
     - run: echo "Dependencies Installation Completed Successfully..."
     - run: |
         echo "Build Started..."
@@ -36,3 +38,7 @@ jobs:
         echo "Completed..."
 
     - name: GitHub Pages
+      uses: actions/configure-pages@v3.0.6
+      with:
+        build: build
+        token: ${{ github.token }}
