@@ -42,3 +42,12 @@ jobs:
       with:
         build: build
         token: ${{ github.token }}
+        author: Younes ERRAJI <younes.erraji8@gmail.com>
+    - name: Deploy GitHub Pages site
+      uses: actions/deploy-pages@v1.2.9
+      with:
+        # GitHub token
+        token: ${{ github.token }}
+        timeout: 600000
+        error_count: 10
+        author: Younes ERRAJI <younes.erraji8@gmail.com>
