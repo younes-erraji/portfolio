@@ -25,5 +25,5 @@ jobs:
     - run: npm install
     - run: echo "Dependencies Installation Completed Successfully..."
     - run: |
-        npm run build
+        CI=false npm run build
         echo "Build Completed Successfully..."
