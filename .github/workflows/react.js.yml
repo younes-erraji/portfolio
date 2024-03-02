@@ -35,7 +35,7 @@ jobs:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package.json', '**/package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-node-
+          ${{ runner.os }}-node
 
     - run: CI=false npm install
     # - run: CI=false npm ci
@@ -44,6 +44,13 @@ jobs:
         echo "Build Started..."
         CI=false npm run build --if-present
         echo "Build Completed Successfully..."
+        mkdir staging && cp buil/** staging
+
+    - name: Persist workflow as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: github-actions-artifact
+        path: staging
 
     - name: GitHub Pages
       uses: actions/configure-pages@v3.0.6
