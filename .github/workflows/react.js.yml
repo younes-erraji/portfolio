@@ -21,12 +21,22 @@ jobs:
         node-version: [16.16.0]
 
     steps:
+    - name: Checkout code
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
+    - name: Cache node modules
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package.json', '**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
     - run: CI=false npm install
     # - run: CI=false npm ci
     - run: echo "Dependencies Installation Completed Successfully..."
